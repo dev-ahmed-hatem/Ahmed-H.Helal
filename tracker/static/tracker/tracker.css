@@ -1,0 +1,399 @@
+@import url(https://db.onlinewebfonts.com/c/d66fa62dabed66f2226a1b2d17da0579?family=Showcard+Gothic);
+@font-face {
+	font-family: "Showcard Gothic";
+	src: url("//db.onlinewebfonts.com/t/d66fa62dabed66f2226a1b2d17da0579.eot");
+	src: url("//db.onlinewebfonts.com/t/d66fa62dabed66f2226a1b2d17da0579.eot?#iefix")
+			format("embedded-opentype"),
+		url("//db.onlinewebfonts.com/t/d66fa62dabed66f2226a1b2d17da0579.woff2")
+			format("woff2"),
+		url("//db.onlinewebfonts.com/t/d66fa62dabed66f2226a1b2d17da0579.woff")
+			format("woff"),
+		url("//db.onlinewebfonts.com/t/d66fa62dabed66f2226a1b2d17da0579.ttf")
+			format("truetype"),
+		url("//db.onlinewebfonts.com/t/d66fa62dabed66f2226a1b2d17da0579.svg#Showcard Gothic")
+			format("svg");
+}
+body {
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	color: #3f9aa5;
+	overflow: hidden;
+}
+
+::-webkit-scrollbar {
+	background-color: #fff;
+	width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #0090d3;
+	border-radius: 10px;
+	width: 5px;
+}
+
+.main-container {
+	background-color: #1f1f1f;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0 20px 10px;
+	box-sizing: border-box;
+	text-align: center;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.main-header {
+	font-family: "Showcard Gothic", fantasy;
+	font-weight: lighter;
+	color: #f5ffff;
+	display: inline-block;
+	position: relative;
+	word-wrap: break-word;
+	cursor: default;
+	transition: all 0.5s;
+}
+
+.main-header::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 0;
+	width: 100%;
+	content: attr(data-title);
+	color: #3f9aa5;
+	transition: height 0.6s;
+	overflow: hidden;
+}
+
+.main-header:hover::after {
+	height: 100%;
+}
+
+.middle-container {
+	position: relative;
+	height: 100%;
+	padding: 0 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.middle-container:hover .not-hovered::after {
+	opacity: 1;
+}
+
+.child-cont {
+	display: block;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 19%;
+	height: 100%;
+	cursor: pointer;
+	box-sizing: border-box;
+	padding: 0;
+	overflow: hidden;
+	transition: all 0.6s ease-in-out 0.7s, width 0.5s ease-in-out 0.1s, background-color 0s;
+}
+
+.cont-overflow {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	margin: 0;
+	background-size: cover;
+}
+
+.cont-bg {
+	position: relative;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	transition: opacity 0.3s;
+}
+
+.cont-bg::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+.first-cont {
+	background-image: url("images/map.jpg");
+}
+
+.second-cont {
+	background-image: url("images/chat.jpg");
+	transform: translateX(calc(100% + 5%));
+}
+
+.third-cont {
+	background-image: url("images/emergency.jpg");
+	transform: translateX(calc(2 * (100% + 5%)));
+}
+
+.fourth-cont {
+	background-image: url("images/settings.jpg");
+	transform: translateX(calc(3 * (100% + 5%)));
+}
+
+.fifth-cont {
+	background-image: url("images/contact.jpg");
+	transform: translateX(calc(4 * (100% + 5%)));
+}
+
+.child-cont:hover .not-hovered::after {
+	opacity: 0;
+}
+
+.cont-title {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	font-family: "Showcard Gothic", fantasy;
+	font-size: 3vw;
+	transform: translateY(-50px);
+	transition: transform 0.2s;
+	opacity: 0;
+}
+
+.cont-title::before {
+	content: attr(data-title);
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transition: transform 0.5s;
+	opacity: 1;
+}
+
+.cont-title::after {
+	content: attr(data-title);
+	display: block;
+	color: #cacaca;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	transition: height 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0.7s;
+	opacity: 1;
+	overflow: hidden;
+}
+
+.child-cont:hover .cont-title {
+	opacity: 1;
+	transform: translateY(-60px);
+}
+
+.child-cont:hover .cont-title::after {
+	height: 0;
+}
+
+.cont-active {
+	transition: transform 0.4s ease-in-out 0.2s, width 0.4s ease-in-out 0.7s;
+	transform: translateX(0px);
+	cursor: default;
+}
+
+.cont-active .cont-title,
+.cont-active .cont-title::after,
+.cont-active .cont-title::before {
+	transition: opacity 0.5s ease-in-out 0.7s;
+	opacity: 0;
+}
+
+.main-active .child-cont:not(.cont-active) {
+	transition: all 0.4s ease-in-out;
+	transform: rotateY(90deg) scale(0.3);
+	opacity: 0;
+}
+
+.main-active .cont-active {
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+}
+
+.content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: calc(100% - 40px);
+	height: 100%;
+	transform: scale(0);
+	z-index: -1;
+	opacity: 0;
+	transition: opacity 0.7s ease-in-out;
+	overflow-x: hidden;
+	padding: 20px;
+	background-color: #000;
+}
+
+.cont-active .content {
+	display: block;
+	opacity: 0;
+	transition: opacity 0.7s ease-in-out 1.1s, transform 0s ease-in-out;
+}
+
+.cont-active .content-inactive {
+	transform: scale(1);
+	opacity: 1;
+	z-index: 3;
+}
+
+.content h1 {
+	line-height: 400px;
+}
+
+/* ################## cls button ################### */
+
+.cls-button {
+	display: block;
+	height: 100px;
+	width: 100px;
+	margin: auto;
+	background-color: #000000;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+}
+
+.cls-button::after,
+.cls-button::before {
+	content: "";
+	width: 100%;
+	height: 10px;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	background-color: #3f9aa5;
+	margin-top: -6px;
+	opacity: 0;
+	transition: opacity 0.4s, transform 0.4s cubic-bezier(0.72, 0.09, 0.32, 1.57);
+}
+
+.cls-button::after {
+	transform: rotate(45deg) translateX(100%);
+}
+
+.cls-button-active::after {
+	cursor: pointer;
+	opacity: 1;
+	transition: all 0.4s cubic-bezier(0.72, 0.09, 0.32, 1.57);
+	transform: rotate(45deg) translateX(0);
+}
+
+.cls-button::before {
+	transform: rotate(-45deg) translateX(100%);
+}
+
+.cls-button-active::before {
+	cursor: pointer;
+	transition: all 0.4s 0.2s cubic-bezier(0.72, 0.09, 0.32, 1.57);
+	opacity: 1;
+	transform: rotate(-45deg) translateX(0);
+}
+
+@media (max-width: 768px) {
+	* {
+		font-size: large;
+		font-weight: lighter;
+	}
+
+	.main-container {
+		justify-content: space-between;
+	}
+
+	.middle-container {
+		flex-direction: column;
+	}
+
+	.child-cont {
+		width: 100%;
+		height: 19%;
+		background-position-x: 35%;
+		transition: all 0.6s ease-in-out 0.7s, height 0.5s ease-in-out 0.1s;
+	}
+
+	.cont-active {
+		transition: transform 0.4s ease-in-out 0.2s, width 0.4s ease-in-out 0.7s,
+			height 0.4s ease-in-out 0.7s, background-position 0.6s ease-in-out;
+		transform: translateX(0px);
+		cursor: default;
+		background-position: center -20px;
+	}
+
+	.main-active .cont-active {
+		transform: translateY(0px);
+		width: 100%;
+		height: 100%;
+		z-index: 3;
+	}
+
+	.child-cont .cont-title {
+		left: 15%;
+		top: 0;
+		opacity: 1;
+		transform: translateY(-60%);
+	}
+
+	.child-cont .cont-title::after {
+		height: 0;
+	}
+
+	.child-cont.cont-active .cont-title {
+		transition: top 0.6s, left 0.6s;
+		left: 0;
+		top: 20%;
+	}
+
+	.second-cont {
+		transform: translateY(calc(100% + 5%));
+	}
+
+	.third-cont {
+		transform: translateY(calc(2 * (100% + 5%)));
+	}
+
+	.fourth-cont {
+		transform: translateY(calc(3 * (100% + 5%)));
+	}
+
+	.fifth-cont {
+		transform: translateY(calc(4 * (100% + 5%)));
+	}
+
+	.cls-button {
+		width: 75px;
+		height: 75px;
+	}
+
+	.cls-button::after,
+	.cls-button::before {
+		height: 6px;
+	}
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}

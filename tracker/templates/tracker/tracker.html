@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="//db.onlinewebfonts.com/c/d66fa62dabed66f2226a1b2d17da0579?family=Showcard+Gothic"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<link rel="stylesheet" href="{% static "tracker/tracker.css" %}" />
+        <link rel="shortcut icon" type="image/png" href="{% static 'tracker/images/favicon.png' %}"/>
+		<title>Smart Tracker</title>
+	</head>
+	<body>
+		<!-- The bigest container -->
+		<div class="main-container" id="main-container">
+			<h1 class="main-header" id="main-header" data-title="MAIN MENU">
+				MAIN MENU
+			</h1>
+			<!-- The middle container -->
+			<div class="middle-container">
+				<!-- Start first container -->
+				<div class="child-cont first-cont" id="first-cont">
+					<div class="cont-overflow">
+						<div class="cont-bg not-hovered" id="cont-bg">
+							<div class="preview"></div>
+						</div>
+						<div class="content content-inactive">
+							<!-- Button -->
+							<div class="cls-button"></div>
+
+							<h1>Map Display Here</h1>
+						</div>
+					</div>
+					<div class="cont-title" data-title="MAP"></div>
+				</div>
+				<!-- End first container -->
+				<!-- Start second container -->
+				<div class="child-cont second-cont" id="second-cont">
+					<div class="cont-overflow">
+						<div class="cont-bg not-hovered" id="cont-bg">
+							<div class="preview"></div>
+						</div>
+						<div class="content content-inactive">
+							<!-- Button -->
+							<div class="cls-button"></div>
+
+							<h1>Chat Display Here</h1>
+						</div>
+					</div>
+					<div class="cont-title" data-title="CHAT"></div>
+				</div>
+				<!-- End second container -->
+				<!-- Start third container -->
+				<div class="child-cont third-cont" id="third-cont">
+					<div class="cont-overflow">
+						<div class="cont-bg not-hovered" id="cont-bg">
+							<div class="preview"></div>
+						</div>
+						<div class="content content-inactive">
+							<!-- Button -->
+							<div class="cls-button"></div>
+
+							<h1>Emergency Contents Display Here</h1>
+						</div>
+					</div>
+					<div class="cont-title" data-title="EMERGENCY"></div>
+				</div>
+				<!-- End third container -->
+				<!-- Start fourth container -->
+				<div class="child-cont fourth-cont" id="fourth-cont">
+					<div class="cont-overflow">
+						<div class="cont-bg not-hovered" id="cont-bg">
+							<div class="preview"></div>
+						</div>
+						<div class="content content-inactive">
+							<!-- Button -->
+							<div class="cls-button"></div>
+
+							<h1>Settings Display Here</h1>
+						</div>
+					</div>
+					<div class="cont-title" data-title="SETTINGS"></div>
+				</div>
+				<!-- End fourth container -->
+				<!-- Start fifth container -->
+				<div class="child-cont fifth-cont" id="fifth-cont" data-move="1007">
+					<div class="cont-overflow">
+						<div class="cont-bg not-hovered" id="cont-bg">
+							<div class="preview"></div>
+						</div>
+						<div class="content content-inactive">
+							<!-- Button -->
+							<div class="cls-button"></div>
+
+							<h1>Contact Display Here</h1>
+						</div>
+					</div>
+					<div class="cont-title" data-title="CONTACT"></div>
+				</div>
+				<!-- End fifth container -->
+			</div>
+		</div>
+		<script src="{% static "tracker/tracker.js" %}"></script>
+	</body>
+</html>

@@ -1,0 +1,69 @@
+{% extends "portfolio/main.html" %}
+{% load static %}
+{% block title %}
+    <title>Ahmed Helal | skills</title>
+{% endblock %}
+{% block content %}
+<div class="skills content active hide" id="skills">
+    <div class="skills-info">
+        <div class="my-skills">
+            <ul>
+                <h2>Skills:</h2>
+                <li>
+                    <img src="{% static "portfolio/images/e-commerce.png" %}" alt="e-commerce" />
+                    <span>E-commerce</span>
+                </li>
+                <li>
+                    <img src="{% static "portfolio/images/website.png" %}" alt="website" />
+                    <span>Web Applications</span>
+                </li>
+                <li>
+                    <img src="{% static "portfolio/images/desktop.png" %}" alt="desktop" />
+                    <span>Desktop Application</span>
+                </li>
+                <li>
+                    <img src="{% static "portfolio/images/mobile.png" %}" alt="mobile" />
+                    <span>Mobile Applications</span>
+                </li>
+                <li>
+                    <img src="{% static "portfolio/images/ui-ux.png" %}" alt="ui-ux" />
+                    <span>UI / UX Design</span>
+                </li>
+            </ul>
+        </div>
+        <div class="category">
+            <ul>
+                <h2>Programming and Frameworks:</h2>
+                <li>
+                    <img src="{% static "portfolio/images/python.png" %}" alt="python" />
+                    <span>Python</span>
+                </li>
+                <li>
+                    <img src="{% static "portfolio/images/django.png" %}" alt="django" />
+                    <span>Django</span>
+                </li>
+                <li>
+                    <img src="{% static "portfolio/images/kivy.png" %}" alt="kivy" />
+                    <span>Kivy</span>
+                </li>
+                <li>
+                    <img src="{% static "portfolio/images/qt.png" %}" alt="qt" />
+                    <span>PyQt - PySide</span>
+                </li>
+                <li>
+                    <img src="{% static "portfolio/images/front.png" %}" alt="front" />
+                    <span>HTML, CSS, and javascript</span>
+                </li>
+                <li>
+                    <img src="{% static "portfolio/images/bootstrap.png" %}" alt="bootstrap" />
+                    <span>Bootstrap</span>
+                </li>
+                <li>
+                    <img src="{% static "portfolio/images/js.png" %}" alt="js" />
+                    <span>NodeJS, Vue, and React</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

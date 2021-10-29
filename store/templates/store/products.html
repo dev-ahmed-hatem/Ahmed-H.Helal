@@ -1,0 +1,50 @@
+{% extends "store/main.html" %}
+{% load static %}
+
+{% block content %}
+  <!-- product section -->
+
+  <section class="product_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Recent Products
+        </h2>
+      </div>
+      <div class="row">
+
+        {% for item in items %}
+
+            <div class="col-sm-6 col-lg-4">
+              <div class="box">
+                <div class="img-box product">
+                  <img src="/media/{{ item.img }}" alt="">
+                  <a href="{% url "store:product" item.id %}" class="add_cart_btn">
+                    <span>
+                      View
+                    </span>
+                  </a>
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    {{ item.name }}
+                  </h5>
+                  <div class="product_info">
+                    <h5>
+                      <span>{{ item.price|floatformat:1 }} EGP</span>
+                    </h5>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        {% endfor %}
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- end product section -->
+{% endblock %}

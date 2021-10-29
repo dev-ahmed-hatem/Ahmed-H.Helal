@@ -1,0 +1,29 @@
+{% extends "portfolio/main.html" %}
+{% load static %}
+{% block title %}
+    <title>Ahmed Helal | official site</title>
+{% endblock %}
+{% block content %}
+    <div class="about content active hide" id="about">
+        <div class="about-info">
+            <div class="info">
+                <div class="top">
+                    <div class="headings">
+                        <h2>Ahmed Hatem Helal</h2>
+                        <h2>High school student at STEM Gharbiya</h2>
+                        <h2>Part time freelancer</h2>
+                    </div>
+                    <img src="{% static "portfolio/images/logo.png" %}" alt="ahmed h. helal" />
+                </div>
+                <p>
+                     Maybe not the best in that world, but what I
+                    am sure from is that you will find what you are seeking on
+                    here, with attractive designs, accurate details, high
+                    performance, fast-working, and ready for any additions and
+                    modifications at any time your job will be completed in the
+                    specified time and better than expected.
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

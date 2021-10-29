@@ -1,0 +1,63 @@
+{% extends "portfolio/main.html" %}
+{% load static %}
+{% block title %}
+    <title>Ahmed Helal | contact</title>
+{% endblock %}
+{% block content %}
+<div class="contact content active hide" id="contact">
+    <div class="contact-info">
+        <ul>
+            <h2>For more info:</h2>
+            <li>
+                <img src="{% static "portfolio/images/phone.png" %}" alt="phone" />
+                <span>+201555953042</span>
+            </li>
+            <li>
+                <img src="{% static "portfolio/images/whatsapp.png" %}" alt="whatsapp" />
+                <span>+201003736146</span>
+            </li>
+            <li>
+                <img src="{% static "portfolio/images/freelancer1.png" %}" alt="freelancer" />
+                <span>
+                    <a
+                        href="https://www.freelancer.com/u/AhmedHatemHelal"
+                        target="_blank"
+                    >
+                        Ahmed H. Helal @freelancer
+                    </a>
+                </span>
+            </li>
+            <li>
+                <img src="{% static "portfolio/images/upwork.png" %}" alt="upwork" />
+                <span>
+                    <a
+                        href="https://www.upwork.com/freelancers/~0124c9ac3ad4227470"
+                        target="_blank"
+                    >
+                        Ahmed H. Helal @upwork
+                    </a>
+                </span>
+            </li>
+            <li>
+                <img src="{% static "portfolio/images/facebook.png" %}" alt="facebook" />
+                <span>
+                    <a
+                        href="https://www.facebook.com/ahmedhatemezzathelal/"
+                        target="_blank"
+                    >
+                        Ahmed H. Helal @facebook
+                    </a>
+                </span>
+            </li>
+            <li>
+                <img src="{% static "portfolio/images/outlook.png" %}" alt="outlook" />
+                <span>ahmed.1919007@stemgharbiya.moe.edu.eg</span>
+            </li>
+            <li>
+                <img src="{% static "portfolio/images/gmail.png" %}" alt="gmail" />
+                <span>ahmedhatemezzathelal@gmail.com</span>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

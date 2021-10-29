@@ -1,0 +1,75 @@
+{% extends 'store/main.html' %} {% load static %} {% block content %} {% url "store:home" as home %}
+<div class="row pb-5">
+	<div class="col-lg-12">
+
+
+
+
+        <div class="box-element mt-5">
+            <div class="cart-row">
+                <div style="flex: 1"><strong>Date Ordered</strong></div>
+                <div style="flex: 1"><strong>Address</strong></div>
+                <div style="flex: 1"><strong>Price</strong></div>
+                <div style="flex: 1"><strong>Quantity</strong></div>
+                <div style="flex: 1"><strong>Status</strong></div>
+                <div style="flex: 1"></div>
+            </div>
+
+        {% if shipping %}
+            <h3 style="color: #3a4468;text-align: center">New Orders</h3>
+        {% for shipping_order in shipping %}
+            <div class="cart-row">
+                <div style="flex: 1"><strong>{{ shipping_order.date_ordered }}</strong></div>
+                <div style="flex: 1"><strong>{{ shipping_order.address }}</strong></div>
+                <div style="flex: 1"><strong>{{ shipping_order.order.total_price }} EGP</strong></div>
+                <div style="flex: 1"><strong>{{ shipping_order.order.total_quantity }}</strong></div>
+                <div style="flex: 1">
+                    <strong>
+                    <span style="color: #f3c93e;text-align: center">{{ shipping_order.status }}</span>
+                    </strong>
+                </div>
+                <div style="flex: 1">
+                    <a style="float: right;background-color: #28a745; margin: 5px;" class="btn btnn" href="{% url "store:confirm_order" shipping_order.id %}">Confirm</a>
+                    <a style="float: right; margin: 5px;" class="btn btnn" href="{% url "store:shipping_order" shipping_order.id %}">Details</a>
+                </div>
+			</div>
+
+        {% endfor %}
+        {% else %}
+
+        <div class="box-element">
+			<a class="btn btnn" href="{% url "store:home" %}">&#x2190; Home</a>
+			<br />
+			<br />
+			<h3 class="mb-5" style="color: #dc3545 ;text-align: center">No New Orders For Now.</h3>
+		</div>
+
+        {% endif %}
+
+            <h3 class=" mt-5" style="color: #3a4468;text-align: center">Confirmed Orders</h3>
+        {% for shipping_order in confirmed_shipping %}
+            <div class="cart-row">
+                <div style="flex: 1"><strong>{{ shipping_order.date_ordered }}</strong></div>
+                <div style="flex: 1"><strong>{{ shipping_order.address }}</strong></div>
+                <div style="flex: 1"><strong>{{ shipping_order.order.total_price }} EGP</strong></div>
+                <div style="flex: 1"><strong>{{ shipping_order.order.total_quantity }}</strong></div>
+                <div style="flex: 1">
+                    <strong>
+                    <span style="color: #28a745;text-align: center">{{ shipping_order.status }}</span>
+                    </strong>
+                </div>
+                <div style="flex: 1"><span style="float: right;color: #28a745; margin: 5px;">{{ shipping_order.delivery_man }}</span>
+                <a style="float: right; margin: 5px;" class="btn btnn" href="{% url "store:shipping_order" shipping_order.id %}">Details</a></div>
+			</div>
+
+        {% endfor %}
+
+        </div>
+        </div>
+
+
+
+
+	</div>
+</div>
+{% endblock %}

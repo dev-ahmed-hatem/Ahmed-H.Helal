@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="{% static "portfolio/portfolio.css" %}" />
+		<title>Ahmed Helal | official site</title>
+	</head>
+	<body>
+		<main>
+			<div class="glass">
+				<nav class="dashboard">
+					<div class="person">
+						<img src="{% static "portfolio/images/avatar.jpg" %}" alt="Ahmed H. Helal" />
+						<h3>Ahmed H. Helal</h3>
+						<p>Full Stack Developer</p>
+					</div>
+					<button class="navbar-toggler" id="toggler">
+						<span></span>
+					</button>
+					<div class="links" id="links">
+						<div class="link selected" data-content="about">
+							<img src="{% static "portfolio/images/about.png" %}" alt="about" />
+							<h3>About</h3>
+						</div>
+						<div class="link" data-content="skills">
+							<img src="{% static "portfolio/images/skills.png" %}" alt="skills" />
+							<h3>Skills</h3>
+						</div>
+						<div class="link" data-content="works">
+							<img src="{% static "portfolio/images/portfolio.png" %}" alt="portfolio" />
+							<h3>Works</h3>
+						</div>
+						<div class="link" data-content="contact">
+							<img src="{% static "portfolio/images/contact.png" %}" alt="contact" />
+							<h3>Contact</h3>
+						</div>
+					</div>
+				</nav>
+				<div class="about content active" id="about">
+					<img src="images/ahmed.jpg" alt="ahmed hatem" />
+					<div class="about-info">
+						<div class="info">
+							<h2>Ahmed Hatem Helal</h2>
+							<h2>High school student at STEM Gharbiya</h2>
+							<h2>Part time freelancer</h2>
+							<p>
+								&nbsp;&nbsp;&nbsp; Maybe not the best in that world, but what I
+								am sure from is that you will find what you are searching on
+								here, with attractive designs, accurate details, high
+								performance, fast-working, and ready for any additions and
+								modifications at any time your job will be completed in the
+								specified time and better than expected.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="skills content" id="skills" style="display: none">
+					<div class="skills-info">
+						<div class="my-skills">
+							<ul>
+								<h2>Skills:</h2>
+								<li>
+									<img src="images/e-commerce.png" alt="e-commerce" />
+									<span>E-commerce</span>
+								</li>
+								<li>
+									<img src="images/website.png" alt="website" />
+									<span>Web Applications</span>
+								</li>
+								<li>
+									<img src="images/desktop.png" alt="desktop" />
+									<span>Desktop Application</span>
+								</li>
+								<li>
+									<img src="images/mobile.png" alt="mobile" />
+									<span>Mobile Applications</span>
+								</li>
+								<li>
+									<img src="images/ui-ux.png" alt="ui-ux" />
+									<span>UI / UX Design</span>
+								</li>
+							</ul>
+						</div>
+						<div class="category">
+							<ul>
+								<h2>Programming and Frameworks:</h2>
+								<li>
+									<img src="images/python.png" alt="python" />
+									<span>Python</span>
+								</li>
+								<li>
+									<img src="images/django.png" alt="django" />
+									<span>Django</span>
+								</li>
+								<li>
+									<img src="images/kivy.png" alt="kivy" />
+									<span>Kivy</span>
+								</li>
+								<li>
+									<img src="images/qt.png" alt="qt" />
+									<span>PyQt - PySide</span>
+								</li>
+								<li>
+									<img src="images/front.png" alt="front" />
+									<span>HTML, CSS, and javascript</span>
+								</li>
+								<li>
+									<img src="images/bootstrap.png" alt="bootstrap" />
+									<span>Bootstrap</span>
+								</li>
+								<li>
+									<img src="images/js.png" alt="js" />
+									<span>NodeJS, Vue, and React</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="works content" id="works" style="display: none"></div>
+				<div class="contact content active" id="contact" style="display: none">
+					<div class="contact-info">
+						<ul>
+							<h2>For orders or more info:</h2>
+							<li>
+								<img src="images/phone.png" alt="phone" />
+								<span>+201555953042</span>
+							</li>
+							<li>
+								<img src="images/whatsapp.png" alt="whatsapp" />
+								<span>+201003736146</span>
+							</li>
+							<li>
+								<img src="images/freelancer.png" alt="freelancer" />
+								<span>
+									<a
+										href="https://www.freelancer.com/u/AhmedHatemHelal"
+										target="_blank"
+									>
+										Ahmed H. Helal @freelancer
+									</a>
+								</span>
+							</li>
+							<li>
+								<img src="images/upwork.png" alt="upwork" />
+								<span>
+									<a
+										href="https://www.upwork.com/freelancers/~0124c9ac3ad4227470"
+										target="_blank"
+									>
+										Ahmed H. Helal @upwork
+									</a>
+								</span>
+							</li>
+							<li>
+								<img src="images/facebook.png" alt="facebook" />
+								<span>
+									<a
+										href="https://www.facebook.com/ahmedhatemezzathelal/"
+										target="_blank"
+									>
+										Ahmed H. Helal @facebook
+									</a>
+								</span>
+							</li>
+							<li>
+								<img src="images/outlook.png" alt="outlook" />
+								<span>ahmed.1919007 @stemgharbiya.moe.edu.eg</span>
+							</li>
+							<li>
+								<img src="images/gmail.png" alt="gmail" />
+								<span>ahmedhatemezzathelal @gmail.com</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</main>
+		<div class="circle circle1"></div>
+		<div class="circle circle2"></div>
+		<script src="{% static "portfolio/portfolio.js" %}"></script>
+	</body>
+</html>

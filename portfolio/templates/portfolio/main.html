@@ -1,0 +1,97 @@
+{% load static %}
+{% url "portfolio:about" as about %}
+{% url "portfolio:skills" as skills %}
+{% url "portfolio:works" as works %}
+{% url "portfolio:contact" as contact %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" type="image/png" href="{% static 'portfolio/images/favicon.png' %}"/>
+		<link rel="stylesheet" href="{% static "portfolio/portfolio.css" %}" />
+        {% block title %}
+            <title>Ahmed Helal</title>
+        {% endblock %}
+	</head>
+	<body>
+        <div class="load" id="load">
+            <div class="letter">L</div>
+            <div class="letter">O</div>
+            <div class="letter">A</div>
+            <div class="letter">D</div>
+            <div class="letter">I</div>
+            <div class="letter">N</div>
+            <div class="letter">G</div>
+            <div class="letter">.</div>
+            <div class="letter">.</div>
+            <div class="letter">.</div>
+        </div>
+		<main>
+            <div id="background-wrap">
+                <div class="bubble x1"></div>
+                <div class="bubble x2"></div>
+                <div class="bubble x3"></div>
+                <div class="bubble x4"></div>
+                <div class="bubble x5"></div>
+                <div class="bubble x6"></div>
+                <div class="bubble x7"></div>
+                <div class="bubble x8"></div>
+                <div class="bubble x9"></div>
+                <div class="bubble x10"></div>
+                <div class="bubble x11"></div>
+                <div class="bubble x12"></div>
+                <div class="bubble x13"></div>
+                <div class="bubble x14"></div>
+                <div class="bubble x15"></div>
+                <div class="bubble x16"></div>
+                <div class="bubble x17"></div>
+                <div class="bubble x18"></div>
+                <div class="bubble x19"></div>
+                <div class="bubble x20"></div>
+            </div>
+			<div class="glass hide" id="glass">
+				<nav class="dashboard hide" id="dashboard">
+					<div class="person">
+						<img src="{% static "portfolio/images/avatar.jpg" %}" alt="Ahmed H. Helal" />
+						<h3>Ahmed H. Helal</h3>
+						<p>Full Stack Developer</p>
+					</div>
+					<button class="navbar-toggler" id="toggler">
+						<span></span>
+					</button>
+					<div class="links" id="links">
+                        <a href="{{ about }}">
+                            <div class="link {% if request.path == about %} selected {% endif %}" data-content="about">
+                                <img src="{% static "portfolio/images/about.png" %}" alt="about" />
+                                <h3>About</h3>
+                            </div>
+                        </a>
+                        <a href="{{ works }}">
+                            <div class="link {% if request.path == works %} selected {% endif %}" data-content="works">
+                                <img src="{% static "portfolio/images/portfolio.png" %}" alt="portfolio" />
+                                <h3>Works</h3>
+                            </div>
+                        </a>
+                        <a href="{{ skills }}">
+                            <div class="link {% if request.path == skills %} selected {% endif %}" data-content="skills">
+                                <img src="{% static "portfolio/images/skills.png" %}" alt="skills" />
+                                <h3>Skills</h3>
+                            </div>
+                        </a>
+                        <a href="{{ contact }}">
+                            <div class="link {% if request.path == contact %} selected {% endif %}" data-content="contact">
+                                <img src="{% static "portfolio/images/contact.png" %}" alt="contact" />
+                                <h3>Contact</h3>
+                            </div>
+                        </a>
+					</div>
+				</nav>
+				{% block content %}
+
+				{% endblock %}
+			</div>
+		</main>
+		<script src="{% static "portfolio/portfolio.js" %}"></script>
+	</body>
+</html>

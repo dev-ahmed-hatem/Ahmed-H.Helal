@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="{% static "portfolio/rewriter/images/icon.ico" %}" type="image/x-icon" />
+		<link rel="stylesheet" href="{% static "portfolio/rewriter/rewriter.css" %}" />
+		<title>Correct Rewriter 0.3</title>
+	</head>
+	<body>
+		<!-- Start Header -->
+		<header class="header">
+			<h4 class="about"><a href="{% url "portfolio:about" %}" target="_blank">About Developer</a></h4>
+			<div class="header-content">
+				<h1>
+					Correct Rewriter <br />
+					V 0.3 Desktop & Chrome Extension
+				</h1>
+				<p>
+					&nbsp;&nbsp;&nbsp;A
+					<span class="keyword">Desktop & chrome extension</span> automated
+					application, is good for people who deal with
+					<span class="keyword">arabic</span> and
+					<span class="keyword">english</span> languages, can
+					<span class="keyword">convert</span> the
+					<span class="keyword">wrong written</span> words with one language to
+					another on the fly.
+				</p>
+                <a href="{% static "portfolio/rewriter/app/Correct Rewriter 0.3.rar" %}">
+                    Download Now
+                </a>
+			</div>
+		</header>
+		<!-- End Header -->
+
+		<!-- Start Features -->
+		<div class="overview">
+			<h2 class="title">Application Features</h2>
+			<div class="features">
+				<div class="feature animated show-from-left">
+					<img src="{% static "portfolio/rewriter/images/automated.png" %}" alt="automated mechanism" />
+					<h3>Automation Handling</h3>
+					<span
+						>Just click the app icon and the text will be corrected and copied
+						to clipboard automatically.</span
+					>
+				</div>
+				<div class="feature animated show-from-bottom">
+					<img src="{% static "portfolio/rewriter/images/async.png" %}" alt="async workspace" />
+					<h3>Async Workspace</h3>
+					<span
+						>Can work as background task (a tray icon in taskbar) without
+						interrupting the main operations.
+                    </span>
+				</div>
+				<div class="feature animated show-from-right">
+					<img src="{% static "portfolio/rewriter/images/chrome.png" %}" alt="chrome extension" />
+					<h3>Chrome Extension</h3>
+					<span>available to use in the chrome as extension.</span>
+				</div>
+			</div>
+			<div class="images">
+				<img class="app" src="{% static "portfolio/rewriter/images/automation.png" %}" alt="automation" />
+				<div class="about">
+					<div>
+						-
+						<span class="keyword"
+							><a href="https://www.python.org/" target="_blank"
+								>Python</a
+							></span
+						>
+						is an interpreted high-level general-purpose programming language.
+					</div>
+					<div>
+						-
+						<span class="keyword"
+							><a href="https://www.w3schools.com/whatis/" target="_blank"
+								>Web Features</a
+							></span
+						>
+						multiple languages such HTML, CSS, and JS. Are used in the chrome
+						extension page.
+					</div>
+					<div>
+						-
+						<span class="keyword"
+							><a href="https://doc.qt.io/qtforpython/" target="_blank"
+								>PyQt5</a
+							></span
+						>
+						is a python binding of the cross-platform GUI toolkit Qt,
+						implemented as a Python plug-in. It is free software developed by
+						the British firm Riverbank Computing.
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Features -->
+
+		<!-- Start Screenshots -->
+		<div class="screenshots">
+			<h2>Application Screenshots</h2>
+			<div class="app">
+				<img src="{% static "portfolio/rewriter/images/app.png" %}" alt="app" class="animated show-from-left" />
+				<p class="animated show-from-right">
+					Application main window, once opened it accesses the clipboard and get
+					the copied text, then correcting it and copy the correct one to
+					clipboard again.
+				</p>
+			</div>
+			<div class="shortcuts">
+				<p class="animated show-from-left">
+					Popup screen attached to chrome extension, can perform the application
+					main algorithm on the text within chrome.
+				</p>
+				<img src="{% static "portfolio/rewriter/images/popup.png" %}" alt="popup" class="animated show-from-right" />
+			</div>
+			<div>
+				<img
+					src="{% static "portfolio/rewriter/images/extension.png" %}"
+					alt="extension"
+					class="animated show-from-left"
+				/>
+				<p class="animated show-from-right">
+					The extension script modifying the html pages by adding a small icon at
+					the end of each text box in the page, and correcting the texts on the
+					fly.
+				</p>
+			</div>
+		</div>
+		<!-- End Screenshots -->
+
+		<!-- Start Footer -->
+		<footer>
+			<div class="info">
+				<div class="app animated show-from-left">
+					<h2>
+						Correct Rewriter <br />
+						V 0.3 Desktop & Chrome Extension
+					</h2>
+                    <a href="{% static "portfolio/rewriter/app/Correct Rewriter 0.3.rar" %}">
+                        Download Now
+                    </a>
+				</div>
+				<div class="contact animated show-from-right">
+                    <a href="{% url "portfolio:about" %}" target="_blank">
+    					<div class="portfolio">
+                            <span>Ahmed Helal | official site</span>
+                        </div>
+                    </a>
+                    <a href="{% url "portfolio:contact" %}" target="_blank">
+                        <div class="outlook">
+						    <span>ahmed.1919007@stemgharbiya.moe.edu.eg</span>
+					    </div>
+                    </a>
+                    <a href="https://www.facebook.com/ahmedhatemezzathelal/" target="_blank">
+                        <div class="facebook">
+                            <span>Ahmed H. Helal</span>
+                        </div>
+                    </a>
+                    <a href="{% url "portfolio:contact" %}" target="_blank">
+                        <div class="gmail">
+						    <span>ahmedhatemezzathelal@gmail.com</span>
+					    </div>
+                    </a>
+                    <a href="{% url "portfolio:contact" %}" target="_blank">
+                        <div class="whatsapp">
+                            <span>+201003736146</span>
+                        </div>
+                    </a>
+				</div>
+			</div>
+			<div class="copy">
+				&copy;2021 All Rights Reserved By
+				<span class="about">
+					<strong><a href="{% url "portfolio:about" %}">Ahmed H. Helal</a></strong>
+				</span>
+			</div>
+		</footer>
+		<!-- End Footer -->
+		<script src="{% static "portfolio/animation.js" %}"></script>
+	</body>
+</html>

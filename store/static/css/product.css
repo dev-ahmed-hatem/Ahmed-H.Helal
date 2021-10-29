@@ -1,0 +1,25 @@
+.product-details .img-box::before {
+    background-color: transparent !important;
+}
+
+.hr {
+    height: 1px;
+    background: #000;
+    margin: 50px 0;
+    width: 60%;
+}
+
+.product_section .box .product_info {
+    flex-direction: column;
+}
+
+.detail-box span {
+    min-width: 150px;
+    display: inline-block;
+}
+
+.product_section .btn_box .view_more-link::before{
+    content: "\f07a";
+    font-family: 'FontAwesome';
+    margin-right: 8px;
+}

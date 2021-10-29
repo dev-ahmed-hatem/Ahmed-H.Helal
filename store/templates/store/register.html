@@ -1,0 +1,78 @@
+{% extends "store/footer.html" %}
+{% load static %}
+{% block head %}
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="{% static "images/favicon.png" %}" type="image/gif" />
+		<link rel="stylesheet" href="{% static "css/register.css" %}" />
+        <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.css" %}" />
+        <link href="{% static "css/style.css" %}" rel="stylesheet" />
+		<title>Registeration</title>
+	</head>
+{% endblock %}
+{% block body %}
+
+	<body>
+		<div class="mother">
+            <div class="login-page">
+                <div class="form">
+                    <form class="login-form {% if signup %}hidden{% endif %}" action="{% url "store:register_check" registration_type="login" %}" method="post">
+                        {% csrf_token %}
+                        <p class="error-message">{{ login_error|default:"" }}</p>
+                        <input name="username" type="text" placeholder="username" value="{{ login_username|default:'' }}" required />
+                        <span></span>
+                        <input name="password" type="password" placeholder="password" required />
+                        <span></span>
+                        <button>login</button>
+                        <p class="message">
+                            Not registered? <span>Create an account</span>
+                        </p>
+                    </form>
+
+                    <form class="register-form {% if not signup %}hidden{% endif %}" action="{% url "store:register_check" registration_type="signup" %}" method="post">
+                        {% csrf_token %}
+                        <p class="error-message">{{ signup_error|default:"" }}</p>
+                        <input type="text" placeholder="First Name" name="first name" value="{{ signup_first_name }}" required />
+                        <span></span>
+                        <input type="text" placeholder="Last Name" name="last name" value="{{ signup_last_name }}" required />
+                        <span></span>
+                        <input type="text" placeholder="User Name" name="username" required />
+                        <span></span>
+                        <input type="email" placeholder="Email" name="email" value="{{ signup_email }}" required />
+                        <span></span>
+                        <input type="text" placeholder="Address" name="address" value="{{ signup_address }}" required />
+                        <span></span>
+                        <input type="number" placeholder="Phone" name="phone" value="{{ signup_phone }}" required />
+                        <span></span>
+                        <input type="text" placeholder="City" name="city" value="{{ signup_city }}" required />
+                        <span></span>
+                        <input type="password" placeholder="Password" name="password" required />
+                        <span></span>
+                        <input type="password" placeholder="Confirm Password" name="confirm password" required />
+                        <span></span>
+                        <button>create</button>
+                        <p class="message">Already registered? <span>Log In</span></p>
+                    </form>
+                </div>
+            </div>
+			<img src="{% static "images/about-img.jpg" %}" alt="Online Shop" />
+            {% block footer.super %}
+
+            {% endblock %}
+		</div>
+
+		<script>
+			const message = document.querySelectorAll(".message span"),
+				loginForm = document.querySelector(".login-form"),
+				registerForm = document.querySelector(".register-form");
+			for (let link = 0; link < message.length; link++) {
+				message[link].addEventListener("click", (event) => {
+					loginForm.classList.toggle("hidden");
+					registerForm.classList.toggle("hidden");
+				});
+			}
+		</script>
+	</body>
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends 'store/main.html' %} {% load static %} {% block content %} {% url "store:home" as home %}
+<div class="row pb-5">
+	<div class="col-lg-12">
+    <div class="box-element">
+
+            {% if request.user.deliveryman %}
+                <a class="btn btnn" href="{% url "store:orders" %}">&#x2190; Back To Orders</a>
+                {% if shipping.status == "ordered" %}
+                    <a style="float: right;background-color: #28a745; margin: 5px;" class="btn btnn" href="{% url "store:confirm_order" shipping.id %}">Confirm</a>
+                {% else %}
+                    <span style="float: right;color: #28a745; margin: 5px;">Confirmed By: {{ shipping.delivery_man }}</span>
+                {% endif %}
+            {% else %}
+                <a class="btn btnn" href="{% url "store:cart" %}">&#x2190; Back To Cart</a>
+            {% endif %}
+
+
+        <h3 class="mt-3" style="color: #3a4468;text-align: center">Shipping Information</h3>
+		<div class="box-element  mt-2">
+            <div class="cart-row">
+                <div style="flex: 1"><strong>Date Ordered</strong></div>
+                <div style="flex: 1"><strong>Price</strong></div>
+                <div style="flex: 1"><strong>Quantity</strong></div>
+                <div style="flex: 1"><strong>Order Number</strong></div>
+                <div style="flex: 1"><strong>Deliverer</strong></div>
+                <div style="flex: 1"><strong>Status</strong></div>
+            </div>
+
+
+            <div class="cart-row">
+                <div style="flex: 1"><strong>{{ shipping.date_ordered }}</strong></div>
+                <div style="flex: 1"><strong>{{ shipping.order.total_price }} EGP</strong></div>
+                <div style="flex: 1"><strong>{{ shipping.order.total_quantity }}</strong></div>
+                <div style="flex: 1"><strong>{{ shipping.id }}</strong></div>
+                <div style="flex: 1"><strong>
+                    {% if shipping.delivery_man %}
+                        <span style="color: #28a745 ;text-align: center">
+                        {{ shipping.delivery_man }}
+                        </span>
+                    {% else %}
+                        <span style="color: #dc3545 ;text-align: center">Not Confirmed Yet</span>
+                    {% endif %}</strong></div>
+                <div style="flex: 1"><strong>
+                    {% if shipping.status == "ordered" %}
+                        <span style="color: #dc3545;text-align: center">
+                        {{ shipping.status }}
+                        </span>
+                    {% else %}
+                        <span style="color: #28a745;text-align: center">
+                        {{ shipping.status }}
+                        </span>
+                    {% endif %}</strong></div>
+            </div>
+
+        </div>
+
+		<br />
+
+         <h3 class="mt-3" style="color: #3a4468;text-align: center">User Information</h3>
+		<div class="box-element  mt-2">
+            <div class="cart-row">
+                <div style="flex: 1"><strong>Name</strong></div>
+                <div style="flex: 1"><strong>Email</strong></div>
+                <div style="flex: 1"><strong>Address</strong></div>
+                <div style="flex: 1"><strong>city</strong></div>
+                <div style="flex: 1"><strong>phone</strong></div>
+            </div>
+
+
+            <div class="cart-row">
+                <div style="flex: 1"><strong>{{ shipping.user.name }}</strong></div>
+                <div style="flex: 1"><strong>{{ shipping.user.email }}</strong></div>
+                <div style="flex: 1"><strong>{{ shipping.user.address }}</strong></div>
+                <div style="flex: 1"><strong>{{ shipping.user.city }}</strong></div>
+                <div style="flex: 1"><strong>{{ shipping.user.phone }}</strong></div>
+            </div>
+        </div>
+
+		<br />
+
+    {% if shipping.delivery_man %}
+        <h3 class="mt-3" style="color: #3a4468;text-align: center">Deliverer Information</h3>
+		<div class="box-element  mt-2">
+            <div class="cart-row">
+                <div style="flex: 1"><strong>Name</strong></div>
+                <div style="flex: 1"><strong>Email</strong></div>
+                <div style="flex: 1"><strong>phone</strong></div>
+            </div>
+
+
+            <div class="cart-row">
+                <div style="flex: 1"><strong>{{ shipping.delivery_man.name }}</strong></div>
+                <div style="flex: 1"><strong>{{ shipping.delivery_man.email }}</strong></div>
+                <div style="flex: 1"><strong>{{ shipping.delivery_man.phone }}</strong></div>
+            </div>
+        </div>
+
+		<br />
+    {% endif %}
+
+        <h3 class=" mt-5" style="color: #3a4468;text-align: center">Order Items</h3>
+		<div class="box-element mt-2">
+			<div class="cart-row">
+				<div style="flex: 1"></div>
+				<div style="flex: 1"><strong>Item</strong></div>
+				<div style="flex: 1"><strong>Price</strong></div>
+				<div style="flex: 1"><strong>Quantity</strong></div>
+				<div style="flex: 1"><strong>Total</strong></div>
+			</div>
+
+			{% for item in shipping.order.cartitem_set.all %}
+
+			<div class="cart-row">
+				<div style="flex: 1">
+					<img class="row-image" src="/media/{{ item.product.img }}" />
+				</div>
+				<div style="flex: 1"><p><span>{{ item.product.name }}</span></p></div>
+				<div style="flex: 1">
+					<p>{{ item.product.price|floatformat:2 }} EGP</p>
+				</div>
+				<div style="flex: 1">
+					<p class="quantity">x {{ item.quantity }}</p>
+					<div class="quantity">
+
+					</div>
+				</div>
+				<div style="flex: 1"><p>{{ item.total_price|floatformat:2 }} EGP</p></div>
+                </div>
+
+			{% endfor %}
+
+
+		</div>
+    </div>
+
+
+	</div>
+</div>
+{% endblock %}

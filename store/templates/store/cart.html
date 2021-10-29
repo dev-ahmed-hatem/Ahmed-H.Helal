@@ -1,0 +1,116 @@
+{% extends 'store/main.html' %} {% load static %} {% block content %} {% url "store:home" as home %}
+<div class="row pb-5">
+	<div class="col-lg-12">
+
+    {% if newCart %}
+
+		<div class="box-element">
+			<a class="btn btnn" href="{{ home }}">&#x2190; Continue Shopping</a>
+			<br />
+			<br />
+			<table class="table">
+				<tr>
+					<th>
+						<h5>Items: <strong>{{ newCart.total_quantity }}</strong></h5>
+					</th>
+					<th>
+						<h5>
+							Total:<strong> {{ newCart.total_price|floatformat:2 }} EGP</strong>
+						</h5>
+					</th>
+					<th>
+						<a style="float: right; margin: 5px" class="btn btnn" href="{% url "store:checkout" %}"
+							>Order</a>
+					</th>
+				</tr>
+			</table>
+		</div>
+
+		<br />
+
+        <h3 style="color: #3a4468;text-align: center">New Items</h3>
+		<div class="box-element">
+			<div class="cart-row mt-5">
+				<div style="flex: 1"></div>
+				<div style="flex: 1"><strong>Item</strong></div>
+				<div style="flex: 1"><strong>Price</strong></div>
+				<div style="flex: 1"><strong>Quantity</strong></div>
+				<div style="flex: 1"><strong>Total</strong></div>
+                <div>
+                    <span style="float: right; margin: 5px; background-color:#bd2130;" class="btn btnn" data-action="remove-cart" onclick="updateCart(this);">Remove Cart</span>
+                </div>
+			</div>
+
+			{% for item in newCart.cartitem_set.all %}
+
+			<div class="cart-row">
+				<div style="flex: 1">
+					<img class="row-image" src="/media/{{ item.product.img }}" />
+				</div>
+				<div style="flex: 1"><p><a href="{% url "store:product" item.product.id %}">{{ item.product.name }}</a></p></div>
+				<div style="flex: 1">
+					<p>{{ item.product.price|floatformat:2 }} EGP</p>
+				</div>
+				<div style="flex: 1">
+					<p class="quantity">x {{ item.quantity }}</p>
+					<div class="quantity">
+
+					</div>
+				</div>
+				<div style="flex: 1"><p>{{ item.total_price|floatformat:2 }} EGP</p></div>
+                <div><span style="float: right; margin: 5px; background-color:#bd2130;" class="btn btnn" data-id="{{ item.product.id }}" data-action="remove-item" onclick="updateCart(this);">Remove Item</span></div>
+			</div>
+
+			{% endfor %}
+
+
+		</div>
+
+    {% else %}
+
+        <div class="box-element">
+			<a class="btn btnn" href="{{ home }}">&#x2190; Continue Shopping</a>
+			<br />
+			<br />
+			<h3 style="color: #dc3545 ;text-align: center">Your cart is empty.</h3>
+		</div>
+
+    {% endif %}
+
+    {% if shipping_orders %}
+
+        <h3 style="color: #3a4468;text-align: center" class="mt-5">Recent Orders</h3>
+        <div class="box-element mt-5">
+            <div class="cart-row">
+                <div style="flex: 1"><strong>Date Ordered</strong></div>
+                <div style="flex: 1"><strong>Address</strong></div>
+                <div style="flex: 1"><strong>Price</strong></div>
+                <div style="flex: 1"><strong>Quantity</strong></div>
+                <div style="flex: 1"><strong>Status</strong></div>
+                <div style="flex: 1"></div>
+            </div>
+
+        {% for shipping_order in shipping_orders %}
+                    <div class="cart-row">
+                        <div style="flex: 1"><strong>{{ shipping_order.date_ordered }}</strong></div>
+                        <div style="flex: 1"><strong>{{ shipping_order.address }}</strong></div>
+                        <div style="flex: 1"><strong>{{ shipping_order.order.total_price }} EGP</strong></div>
+                        <div style="flex: 1"><strong>{{ shipping_order.order.total_quantity }}</strong></div>
+                        <div style="flex: 1"><strong>
+                            {% if shipping_order.status == "ordered" %}
+                                <span style="color: #f3c93e;text-align: center">{{ shipping_order.status }}</span>
+                            {% else %}
+                                <span style="color: #28a745;text-align: center">{{ shipping_order.status }}</span>
+                            {% endif %}</strong></div>
+                        <div style="flex: 1"><a style="float: right; margin: 5px;" class="btn btnn" href="{% url "store:shipping_order" shipping_order.id %}">Details</a></div>
+			</div>
+
+        {% endfor %}
+
+        </div>
+    {% endif %}
+
+
+	</div>
+</div>
+{% endblock %}

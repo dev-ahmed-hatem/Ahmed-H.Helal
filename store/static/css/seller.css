@@ -1,0 +1,96 @@
+.seller_section .box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    padding: 15px;
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+    justify-content: space-between;
+}
+
+
+.seller_section .detail-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    background-color: #3a4468;
+    padding: 15px;
+    color: #FFF;
+    border-radius: 15px;
+}
+
+
+.seller_section .box .img-box {
+    background-color: #f8f8f8;
+    width: 100%;
+    height: 275px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+
+.seller_section .box .img-box img {
+    height: 175px;
+    max-width: 100%;
+}
+
+
+.seller_section .box .detail-box {
+    padding-top: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact {
+    width: 60%;
+    height: 200px;
+    box-sizing: border-box;
+    min-width: 200px;
+    margin: 16px;
+    max-width: 250px;
+    border: 1px solid;
+    background-color: #3a4468;
+    padding: 15px;
+    color: #FFF;
+    border-radius: 15px;
+}
+
+
+.contact div {
+    display: flex;
+}
+
+
+.contact span {
+    width: 100px;
+    display: inline-block;
+}
+
+.hr {
+    height: 1px;
+    background-color: #f3c93e;
+    margin: 50px 0;
+    width: 60%;
+}

@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="{% static "portfolio/downloader/images/icon.ico" %}" type="image/x-icon" />
+		<link rel="stylesheet" href="{% static "portfolio/downloader/downloader.css" %}" />
+		<title>Video Downloader 1.2</title>
+	</head>
+	<body>
+		<!-- Start Header -->
+		<header class="header">
+			<h4 class="about"><a href="{% url "portfolio:about" %}" target="_blank">About Developer</a></h4>
+			<div class="header-content">
+				<h1>
+					Video Downloader <br />
+					V 1.2 Desktop
+				</h1>
+				<p>
+					&nbsp;&nbsp;&nbsp;A
+					<span class="keyword">desktop application</span> for downloading
+					<span class="keyword">youtube</span> videos with different qualities,
+					in addition to download full
+					<span class="keyword">youtube playlists</span> with button press.
+				</p>
+				<a href="{% static "portfolio/downloader/app/Video Downloader.rar" %}">
+                    Download Now
+                </a>
+			</div>
+		</header>
+		<!-- End Header -->
+
+		<!-- Start Features -->
+		<div class="overview">
+			<h2 class="title">Application Features</h2>
+			<div class="features">
+				<div class="feature animated show-from-left">
+					<img src="{% static "portfolio/downloader/images/free.png" %}" alt="free product" />
+					<h3>Free Product</h3>
+					<span>It is available for everyone free without forign ads.</span>
+				</div>
+				<div class="feature animated show-from-bottom">
+					<img src="{% static "portfolio/downloader/images/speed.png" %}" alt="speed downloading" />
+					<h3>Unlimited Speed</h3>
+					<span
+						>Doesn't limit the download rate and uses the maximum available
+						bandwidth.</span
+					>
+				</div>
+				<div class="feature animated show-from-right">
+					<img src="{% static "portfolio/downloader/images/easy.png" %}" alt="easy" />
+					<h3>Easy To Use</h3>
+					<span
+						>Has a simple interface that makes that easy for users to use.</span
+					>
+				</div>
+			</div>
+			<div class="images">
+				<img class="app" src="{% static "portfolio/downloader/images/api.png" %}" alt="api logo" />
+				<div class="about">
+					<div>
+						-
+						<span class="keyword"
+							><a href="https://www.python.org/" target="_blank"
+								>Python</a
+							></span
+						>
+						is an interpreted high-level general-purpose programming language.
+					</div>
+					<div>
+						-
+						<span class="keyword"
+							><a
+								href="https://pytube.io/en/latest/api.html#youtube-object"
+								target="_blank"
+								>Pytube</a
+							></span
+						>
+						Youtub API (Application program interface) library, is used as
+						intermeiary between the Youtube videos or playlist and the
+						application. It written in python.
+					</div>
+					<div>
+						-
+						<span class="keyword"
+							><a href="https://www.youtube.com/" target="_blank"
+								>Youtube</a
+							></span
+						>
+						is an American online video sharing and social media platform owned
+						by Google.
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Features -->
+
+		<!-- Start Screenshots -->
+		<div class="screenshots">
+			<h2>Application Screenshots</h2>
+			<div>
+				<img src="{% static "portfolio/downloader/images/app.png" %}" alt="app" class="animated show-from-left" />
+				<p class="animated show-from-right">
+					The main application interface, waiting for user input of the video
+					link to start downloading.
+				</p>
+			</div>
+			<div>
+				<p class="animated show-from-left">
+					Playlist section, is responsible for the youtube playlists. Public
+					playlists only are supported in the app.
+				</p>
+				<img src="{% static "portfolio/downloader/images/app2.png" %}" alt="app2" class="animated show-from-right" />
+			</div>
+			<div>
+				<img src="{% static "portfolio/downloader/images/download.png" %}" alt="download" class="animated show-from-left" />
+				<p class="animated show-from-right">
+					Downloading window showing both the statistics of downloading status
+					and video details.
+				</p>
+			</div>
+			<div>
+				<p class="animated show-from-left">
+					Playlist downloading window, specified for playlists downloading and
+					shows both the progresses of playlist and current video downloading.
+				</p>
+				<img src="{% static "portfolio/downloader/images/download2.png" %}" alt="download2" class="animated show-from-right" />
+			</div>
+		</div>
+		<!-- End Screenshots -->
+
+		<!-- Start Footer -->
+		<footer>
+			<div class="info">
+				<div class="app animated show-from-left">
+					<h2>
+						Video Downloader <br />
+						V 1.2 Desktop
+					</h2>
+					<a href="{% static "portfolio/downloader/app/Video Downloader.rar" %}">
+                        Download Now
+                    </a>
+				</div>
+				<div class="contact animated show-from-right">
+                    <a href="{% url "portfolio:about" %}" target="_blank">
+    					<div class="portfolio">
+                            <span>Ahmed Helal | official site</span>
+                        </div>
+                    </a>
+                    <a href="{% url "portfolio:contact" %}" target="_blank">
+                        <div class="outlook">
+						    <span>ahmed.1919007@stemgharbiya.moe.edu.eg</span>
+					    </div>
+                    </a>
+                    <a href="https://www.facebook.com/ahmedhatemezzathelal/" target="_blank">
+                        <div class="facebook">
+                            <span>Ahmed H. Helal</span>
+                        </div>
+                    </a>
+                    <a href="{% url "portfolio:contact" %}" target="_blank">
+                        <div class="gmail">
+						    <span>ahmedhatemezzathelal@gmail.com</span>
+					    </div>
+                    </a>
+                    <a href="{% url "portfolio:contact" %}" target="_blank">
+                        <div class="whatsapp">
+                            <span>+201003736146</span>
+                        </div>
+                    </a>
+				</div>
+			</div>
+			<div class="copy">
+				&copy;2021 All Rights Reserved By
+				<span class="about">
+					<strong><a href="{% url "portfolio:about" %}" target="_blank">Ahmed H. Helal</a></strong>
+				</span>
+			</div>
+		</footer>
+		<!-- End Footer -->
+		<script src="{% static "portfolio/animation.js" %}"></script>
+	</body>
+</html>

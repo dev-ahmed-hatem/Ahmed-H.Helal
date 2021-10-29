@@ -1,0 +1,90 @@
+{% extends "portfolio/main.html" %}
+{% load static %}
+{% block title %}
+    <title>Ahmed Helal | works</title>
+{% endblock %}
+{% block content %}
+    <div class="works content active hide" id="works">
+        <div class="works-info">
+
+            <div class="fingers-shortcut">
+                <h2>Fingers Shortcuts 1.0</h2>
+                <img src="{% static "portfolio/fingers/images/logo.png" %}" alt="fingers shortcuts" />
+                <p>
+                    AI Desktop application use to assign specific windows task with fingers pattern, and using
+                    camera to detect the hand landmarks pattern to perform the task related to it, and can run
+                    as a background application.
+                </p>
+                <a href="{% url "portfolio:fingers" %}" target="_blank">
+                    <button>
+                        <span>Visit Site</span>
+                    </button>
+                </a>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="smart-tracker">
+                <h2>Smart Tracker</h2>
+                <img src="{% static "tracker/images/logo.png" %}" alt="smart tracker" />
+                <p>Interactive web page contains animated frontend layout of smart tracker application with HTML, CSS and JS.</p>
+                <a href="{% url "tracker:main-page" %}" target="_blank">
+                    <button>
+                        <span>Visit Site</span>
+                    </button>
+                </a>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="video-downloader">
+                <h2>Video Downloader 1.2</h2>
+                <img src="{% static "portfolio/downloader/images/logo.png" %}" alt="video downloader" />
+                <p>Youtube video downloader written in python, can download youtube videos easily with different qualities without ads, and provides option to download full youtube playlists with one click.</p>
+                <a href="{% url "portfolio:downloader" %}" target="_blank">
+                    <button>
+                        <span>Visit Site</span>
+                    </button>
+                </a>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="online-shop">
+                <h2>E-Commerce</h2>
+                <img src="{% static "images/logo.png" %}" alt="online shop" />
+                <p>Online Shop (E-Commerce) created with django - python and bootstrap, provides:</p>
+                <ul>
+                    <li>Easy-handle admin dashboard.</li>
+                    <li>Users registration with cart feature for every user.</li>
+                    <li>Full control on products and their sellers.</li>
+                    <li>Organized system for users' orders.</li>
+                    <li>Handling shipping information from users to deliverers and else.</li>
+                </ul>
+                <a href="{% url "store:register" %}" target="_blank">
+                    <button>
+                        <span>Visit Site</span>
+                    </button>
+                </a>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="rewriter">
+                <h2>Correct Rewriter 0.3</h2>
+                <img src="{% static "portfolio/rewriter/images/logo.png" %}" alt="smart tracker" />
+                <p>
+                    Desktop application is used to convert the wrong written texts of keyboard different language
+                    on the fly, provides chrome extension to run with chrome.
+                    Supports Arabic and English only.
+                </p>
+                <a href="{% url "portfolio:rewriter" %}" target="_blank">
+                    <button>
+                        <span>Visit Site</span>
+                    </button>
+                </a>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

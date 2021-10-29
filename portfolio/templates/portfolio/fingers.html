@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="{% static "portfolio/fingers/images/icon.ico" %}" type="image/x-icon" />
+		<link rel="stylesheet" href="{% static "portfolio/fingers/fingers.css" %}" />
+		<title>Fingers Shortcut 1.0</title>
+	</head>
+	<body>
+		<!-- Start Header -->
+		<header class="header">
+			<h4 class="about"><a href="{% url "portfolio:about" %}" target="_blank">About Developer</a></h4>
+			<div class="header-content">
+				<h1>
+					Fingers Shortcuts <br />
+					V 1.0 Desktop
+				</h1>
+				<p>
+					&nbsp;&nbsp;&nbsp;A
+					<span class="keyword">computer vision</span> application with
+					implementation of <span class="keyword">AI smart hand detection</span>,
+					which allows users to create specific operation and assign them to
+					fingers pattern, performing those tasks when
+					<span class="keyword">camera</span> detects the specified
+					<span class="keyword">fingers pattern</span>.
+				</p>
+                <a href="{% static "portfolio/fingers/app/Fingers Shortcuts 1.0.rar" %}">
+                    Download Now
+                </a>
+			</div>
+		</header>
+		<!-- End Header -->
+
+		<!-- Start Features -->
+		<div class="overview">
+			<h2 class="title">Application Features</h2>
+			<div class="features">
+				<div class="feature animated show-from-left">
+					<img src="{% static "portfolio/fingers/images/ai.png" %}" alt="smart detection" />
+					<h3>Smart Detection</h3>
+					<span>Can detect hand landmarks wherever the hand position.</span>
+				</div>
+				<div class="feature animated show-from-bottom">
+					<img src="{% static "portfolio/fingers/images/performance.png" %}" alt="fast performance" />
+					<h3>Fast Performance</h3>
+					<span>Performing shortcuts fast once they have detected.</span>
+				</div>
+				<div class="feature animated show-from-right">
+					<img src="{% static "portfolio/fingers/images/options.png" %}" alt="options" />
+					<h3>Multiple Options</h3>
+					<span>Provides lots of user options and specifications.</span>
+				</div>
+			</div>
+			<div class="images">
+				<img class="app" src="{% static "portfolio/fingers/images/libs.png" %}" alt="app screen" />
+				<div class="about">
+					<div>
+						-
+						<span class="keyword"
+							><a href="https://opencv.org/" target="_blank">OpenCV</a></span
+						>
+						(Open Source Computer Vision) is an open source computer vision and
+						machine learning software library.
+					</div>
+					<div>
+						-
+						<span class="keyword"
+							><a href="https://www.python.org/" target="_blank"
+								>Python</a
+							></span
+						>
+						is an interpreted high-level general-purpose programming language.
+					</div>
+					<div>
+						-
+						<span class="keyword"
+							><a href="https://numpy.org/" target="_blank">NumPy</a></span
+						>
+						is an open source project aiming to enable numerical computing with
+						Python.
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Features -->
+
+		<!-- Start Screenshots -->
+		<div class="screenshots">
+			<h2>Application Screenshots</h2>
+			<div class="app">
+				<img src="{% static "portfolio/fingers/images/app.png" %}" alt="app" class="animated show-from-left" />
+				<p class="animated show-from-right">
+					Application main window, contains list of user option including camera
+					options used in webcam connection and its port number, in addition to
+					visualization options allowing users to define the visual screen size,
+					view statistics, and color of visual screen text, etc.
+				</p>
+			</div>
+			<div class="shortcuts">
+				<p class="animated show-from-left">
+					Shortcuts tab, responsible for shortcuts management: adding, editing,
+					deleteing or clear the whole data.
+					<br />
+					Shortcuts can be either opening file\s or pressing keyboard keys
+					sequence or performing specific command using CMD.
+				</p>
+				<img src="{% static "portfolio/fingers/images/shortcuts.png" %}" alt="shortcuts" class="animated show-from-right" />
+			</div>
+			<div class="visual">
+				<img src="{% static "portfolio/fingers/images/visual.png" %}" alt="visual" class="animated show-from-left" />
+				<p class="animated show-from-right">
+					Visual window, appears when visual option (in display tab) is checked
+					showing the hands landmarks detection and the pattern of raised
+					fingers.
+				</p>
+			</div>
+		</div>
+		<!-- End Screenshots -->
+
+		<!-- Start Footer -->
+		<footer>
+			<div class="info">
+				<div class="app animated show-from-left">
+					<h2>
+						Fingers Shortcuts <br />
+						V 1.0 Desktop
+					</h2>
+                    <a href="{% static "portfolio/fingers/app/Fingers Shortcuts 1.0.rar" %}">
+                        Download Now
+                    </a>
+				</div>
+				<div class="contact animated show-from-right">
+                    <a href="{% url "portfolio:about" %}" target="_blank">
+    					<div class="portfolio">
+                            <span>Ahmed Helal | official site</span>
+                        </div>
+                    </a>
+                    <a href="{% url "portfolio:contact" %}" target="_blank">
+                        <div class="outlook">
+						    <span>ahmed.1919007@stemgharbiya.moe.edu.eg</span>
+					    </div>
+                    </a>
+                    <a href="https://www.facebook.com/ahmedhatemezzathelal/" target="_blank">
+                        <div class="facebook">
+                            <span>Ahmed H. Helal</span>
+                        </div>
+                    </a>
+                    <a href="{% url "portfolio:contact" %}" target="_blank">
+                        <div class="gmail">
+						    <span>ahmedhatemezzathelal@gmail.com</span>
+					    </div>
+                    </a>
+                    <a href="{% url "portfolio:contact" %}" target="_blank">
+                        <div class="whatsapp">
+                            <span>+201003736146</span>
+                        </div>
+                    </a>
+				</div>
+			</div>
+			<div class="copy">
+				&copy;2021 All Rights Reserved By
+				<span class="about">
+					<strong><a href="{% url "portfolio:about" %}" target="_blank">Ahmed H. Helal</a></strong>
+				</span>
+			</div>
+		</footer>
+		<!-- End Footer -->
+		<script src="{% static "portfolio/animation.js" %}"></script>
+	</body>
+</html>
